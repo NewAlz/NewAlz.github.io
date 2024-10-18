@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shibuya's Tourist Spots</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<style>
+  body {
+    user-select: none;
+  }
+
+  .nav-link.active {
+    background-color: black;
+    border: black, solid;
+    border-radius: 30px;
+  }
+
+  .nav-link:hover {
+    color: white;
+    background-color: crimson;
+    border: white;
+    border-radius: 30px;
+  }
+
+  .logo {
+    position: absolute;
+    right: 20px;
+    top: 4.5%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-img-top:hover {
+    transform: scale(1.3);
+  }
+
+  .card-title {
+    color: crimson;
+  }
+
+  .btn {
+    background-color: crimson;
+    color: white;
+    border: crimson;
+  }
+
+  .btn:hover {
+    background-color: #A40024;
+    color: grey;
+  }
+
+  .btn2 {
+    border: black, solid;
+    border-radius: 30px;
+    position: absolute;
+    right: 140px;
+    top: 4.5%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 40px;
+    background-color: inherit;
+  }
+</style>
+
+<body style="font-family: fb agency;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow"
+    style="position: fixed; top: 0; width: 100%; z-index: 1000" id="nav">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link m-3" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active m-3" aria-current="page" href="touristspots.html" style="color: white;">Tourist Spots</a>
+          </li>
+        </ul>
+        <button class="btn btn-outline-secondary m-3" id="btnColor" onclick="changeColorMode()">Dark Mode</button>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row my-5">
+      <h1 class="display-3 pt-5" style="color: crimson;"><b>Tourist Spots</b></h1>
+    </div>
+    <div class="row my-5">
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card m-3 shadow">
+          <img src="shibuya_crossing.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Shibuya Crossing</h5>
+            <p class="card-text">A famous pedestrian crossing in Tokyo, Japan, known for its chaotic beauty and vibrant
+              energy.</p>
+            <a href="https://www.google.com/maps?cid=2370410330085837161" class="btn btn-primary">Directions</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card m-3 shadow">
+          <img src="shibuya_station.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Shibuya Station</h5>
+            <p class="card-text">A major transportation hub in Tokyo, serving multiple train lines to various parts of
+              the city.</p>
+            <a href="https://www.google.com/maps?cid=3707351856262064934" class="btn btn-primary">Directions</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card m-3 shadow">
+          <img src="yoyogi_park.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Yoyogi Park</h5>
+            <p class="card-text">A popular urban park in Tokyo, offering a peaceful oasis away from the city's hustle
+              and bustle.</p>
+            <a href="https://www.google.com/maps/place/Yoyogi+Park/@35.6700692,139.6923907,17z/data=!3m1!4b1!4m6!3m5!1s0x60188cb479620a33:0x34bcc78ce7f8bf3e!8m2!3d35.6700649!4d139.6949656!16zL20vMDNjcWtq?entry=ttu&g_ep=EgoyMDI0MTAxNS4wIKXMDSoASAFQAw%3D%3D"
+              class="btn btn-primary">Directions</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card m-3 shadow">
+          <img src="meiji_jingu.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Meiji Jingu</h5>
+            <p class="card-text">A serene Shinto shrine with greeneries in Tokyo, dedicated to Emperor Meiji and Empress
+              Shoken.</p>
+            <a href="https://www.google.com/maps/place/Meiji+Jingu/@35.6764019,139.696751,17z/data=!3m1!4b1!4m6!3m5!1s0x60188cb79a4c26e5:0x8fca893849103f73!8m2!3d35.6763976!4d139.6993259!16zL20vMDFxX2s5?entry=ttu&g_ep=EgoyMDI0MTAxNS4wIKXMDSoASAFQAw%3D%3D"
+              class="btn btn-primary">Directions</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card m-3 shadow">
+          <img src="shibuya_109.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Shibuya 109</h5>
+            <p class="card-text">A fashion-forward shopping mall in Tokyo, known for its trendy boutiques and vibrant
+              atmosphere.</p>
+            <a href="https://www.google.com/maps/place/Shibuya+109/@35.6595771,139.698728,17z/data=!4m6!3m5!1s0x60188ca9cd6c1c87:0x55a2a75ba417e072!8m2!3d35.6595771!4d139.698728!16s%2Fm%2F03m78kc?entry=ttu&g_ep=EgoyMDI0MTAxNS4wIKXMDSoASAFQAw%3D%3D"
+              class="btn btn-primary">Directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer p-3" style="background-color: crimson; text-align: center; color: white;">
+    <h4>© 2024 Actions Per Minute. All rights reserved.</h4>
+  </div>
+
+  <script>
+    var colorMode = "light";
+    function changeColorMode() {
+      if (colorMode == "light") {
+        document.body.classList.add("bg-dark");
+        document.body.classList.add("text-white");
+        document.getElementById("btnColor").innerHTML = "Light Mode";
+        document.getElementById("btnColor").style.backgroundColor = "crimson";
+        document.getElementById("nav").style.backgroundColor = "crimson";
+        colorMode = "dark";
+      } else {
+        document.body.classList.remove("bg-dark");
+        document.body.classList.remove("text-white");
+        document.getElementById("btnColor").innerHTML = "Dark Mode";
+        document.getElementById("btnColor").style.backgroundColor = "#A40024";
+        document.getElementById("nav").style.backgroundColor = "#A40024";
+        colorMode = "light";
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
