@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Robert's Webpage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body style="font-family: fb agency;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow"
+        style="position: fixed; top: 0; width: 100%; z-index: 1000" id="nav">
+        <div class="container-fluid" id="extraNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <h1 class="title ms-2">Robert's Webpage</h1>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-secondary m-3" id="btnColor" onclick="changeColorMode()"
+                    style="background-color: darkblue; color: white;">Dark
+                    Mode</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row my-5">
+            <h1 class="display-3 pt-5" style="color: Royalblue;"><b>Activities</b></h1>
+        </div>
+        <div class="row my-5">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card m-3 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Activity 1 - Shibuya</h5>
+                        <p class="card-text">A website about the famous tourist spot in shibuya.</p>
+                        <a href="SAM_H02/index.html" class="btn btn-primary">Open Activity</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var colorMode = "light";
+        function changeColorMode() {
+            if (colorMode == "light") {
+                document.body.classList.add("bg-dark");
+                document.body.classList.add("text-white");
+
+                // Change nav background to black in dark mode
+                document.getElementById("nav").classList.add("bg-black");
+                document.getElementById("nav").classList.add("navbar-dark");
+
+                document.getElementById("extraNav").style.backgroundColor = "black";
+                document.getElementById("btnColor").innerHTML = "Light Mode";
+                document.getElementById("btnColor").style.backgroundColor = "Royalblue";
+                document.getElementById("btnColor").style.color = "black";
+                colorMode = "dark";
+            } else {
+                document.body.classList.remove("bg-dark");
+                document.body.classList.remove("text-white");
+
+                // Change nav background back to original color in light mode
+                document.getElementById("nav").classList.remove("bg-black");
+                document.getElementById("nav").classList.remove("navbar-dark");
+
+                document.getElementById("extraNav").style.backgroundColor = "white";
+                document.getElementById("btnColor").innerHTML = "Dark Mode";
+                document.getElementById("btnColor").style.backgroundColor = "Darkblue";
+                document.getElementById("btnColor").style.color = "white";
+                colorMode = "light";
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
