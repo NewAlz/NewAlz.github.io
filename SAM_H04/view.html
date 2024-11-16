@@ -29,9 +29,6 @@
             width: 100%;
         }
 
-        .charGender {
-            width: fit-content;
-        }
     </style>
 </head>
 
@@ -48,7 +45,8 @@
         <div class="row">
             <div class="col text-center">
                 <div class="display-4" id="title" style="color: transparent; -webkit-text-stroke: 1px white;"></div>
-                <div class="rounded-5 card py-2 px-4 mx-auto charGender" id="charGender" style="top: 10px;"></div>
+                <div class="display-3 rounded-5 card py-2 px-4 mx-auto" id="species" style="top: 10px; color: transparent; -webkit-text-stroke: 1px white; width: fit-content;"></div>
+                <div class="rounded-5 card py-2 px-4 mx-auto charGender" id="charGender" style="top: 20px; width: fit-content;"></div>
             </div>
         </div>
     </div>
@@ -62,6 +60,7 @@
 
 
         var title = document.getElementById("title");
+        var species = document.getElementById("species");
         var charImage = document.getElementById("charImage");
         var charGender = document.getElementById("charGender");
 
@@ -70,6 +69,8 @@
             var character = await response.json();
 
             title.innerHTML = "#" + character.id + " " + character.name;
+            species.innerHTML = character.species;
+            species.style.backgroundColor = colors[character.gender];
             charImage.src = character.image;
             charGender.style.backgroundColor = colors[character.gender];
             charGender.innerHTML = character.gender;
