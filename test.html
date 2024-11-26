@@ -21,7 +21,7 @@
                     <img src="cprog_logo.png" class="face extra1">
                     <img src="cplusplus_logo.png" class="face extra2">
                     <img src="python_logo.png" class="face extra3">
-                    <img src="bs_logo.png" class="face extra4">
+                    <img onclick="toBootstrap()" src="bs_logo.png" class="face extra4">
                 </div>
             </div>
         </div>
@@ -130,13 +130,14 @@
 
         .extra4 {
             transform: rotateY(315deg) translateZ(100px);
+            cursor: pointer;
         }
     </style>
 
     <script>
 
-        function goToYoutube() {
-            window.location.href = "youtube.com";
+        function toBootstrap() {
+            window.location.href = "https://getbootstrap.com/";
         }
 
     </script>
