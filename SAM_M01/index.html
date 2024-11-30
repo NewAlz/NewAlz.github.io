@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Demo with YouTube Backgrounds</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: 'Arcane Nine';
+            src: url(Arcane_Nine.otf);
+        }
+
+        @font-face {
+            font-family: 'Solo Level';
+            src: url(SoloLevelDemo.otf);
+        }
+
+        @font-face {
+            font-family: 'Yeyey';
+            src: url(Yeyey.otf);
+        }
+
+        * {
+            user-select: none;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #reminder {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            color: #721c24;
+        }
+
+        .parallax-container {
+            height: 300vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .parallax-section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .parallax-video {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 10000px;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            transform: translateX(-50%);
+        }
+        
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .content {
+            z-index: 1;
+            color: #fff;
+            text-align: center;
+            width: 80%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+
+        .last-section {
+            background-color: #20252D;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .extraTab {
+            margin: 5px;
+            margin-top: 30px;
+            cursor: pointer;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="reminder" style="text-align: center;">Remember to drag the page to scroll down!</div>
+
+    <!-- Section 1 -->
+    <div class="parallax-section" style="border: 1px solid rgba(231, 154, 52, 0.76); box-shadow: 0 0 20px rgba(231, 154, 52, 0.76) inset;">
+        <iframe class="parallax-video" src="https://www.youtube.com/embed/ysqiEC6bLUI?playlist=ysqiEC6bLUI&loop=1&si=PuwPwssP8gzMZjn0&start=6&rel=0&controls=0&disablekb=1&mute=1&autoplay=1"
+            allow="autoplay; encrypted-media" ></iframe>
+        <div class="content" style="font-family: 'Arcane Nine', sans-serif; color: rgba(231, 154, 52, 0.76); -webkit-text-stroke: 3px rgba(87, 55, 7, 0.966); border: 3px solid rgba(231, 154, 52, 0.76); box-shadow: 0 0 10px rgba(231, 154, 52, 0.76), 0 0 10px rgba(231, 154, 52, 0.76) inset;">
+            <h1 style="font-size: 6em; font-weight: 500;">This is Arcane</h1>
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="parallax-section" style="border: 1px solid rgb(187, 4, 233); box-shadow: 0 0 10px rgb(187, 4, 233) inset;">
+        <iframe class="parallax-video" src="https://www.youtube.com/embed/OdQrlp3uYQM?playlist=OdQrlp3uYQM&loop=1&si=XSI6JewvmkX4H9zt&start=6&rel=0&controls=0&disablekb=1&mute=1&autoplay=1"
+            allow="autoplay; encrypted-media"></iframe>
+        <div class="content" style="font-family: 'Solo Level', sans-serif; color: rgba(151, 4, 236, 0.801); -webkit-text-stroke: 3px rgba(7, 7, 7, 0.966); border: 3px solid rgb(187, 4, 233); box-shadow: 0 0 10px rgb(187, 4, 233), 0 0 10px rgb(187, 4, 233) inset;">
+            <h1 style="font-size: 8em; font-weight: 500;">Solo Leveling</h2>
+        </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="parallax-section" style="border: 1px solid rgb(2, 247, 255); box-shadow: 0 0 10px rgb(2, 247, 255) inset;">
+        <iframe class="parallax-video" src="https://www.youtube.com/embed/ZAztdrZF_t4?playlist=ZAztdrZF_t4&loop=1&si=L5pqIcqrgFppoKQL&start=6&rel=0&controls=0&disablekb=1&mute=1&autoplay=1"
+            allow="autoplay; encrypted-media"></iframe>
+        <div class="content" style="font-family: 'Yeyey', sans-serif; color: rgb(2, 247, 255); -webkit-text-stroke: 3px rgba(0, 68, 255, 0.966); border: 3px solid rgb(2, 247, 255); box-shadow: 0 0 10px rgb(2, 247, 255), 0 0 10px rgb(2, 247, 255) inset;">
+            <h1 style="font-size: 3em; font-weight: 500;">Weathering With You</h1>
+        </div>
+    </div>
+
+    <script>
+        let isDragging = false;
+        let startY = 0;
+        let scrollStart = 0;
+
+        function startDrag(eventY) {
+            isDragging = true;
+            startY = eventY;
+            scrollStart = window.scrollY;
+            document.body.style.cursor = "grabbing";
+        }
+
+        function moveDrag(eventY) {
+            if (!isDragging) return;
+            const deltaY = startY - eventY;
+            window.scrollTo({
+                top: scrollStart + deltaY,
+                behavior: "instant"
+            });
+        }
+
+        function endDrag() {
+            if (!isDragging) return;
+            isDragging = false;
+            document.body.style.cursor = "grab";
+        }
+
+        document.addEventListener("mousedown", (e) => startDrag(e.clientY));
+        document.addEventListener("mousemove", (e) => moveDrag(e.clientY));
+        document.addEventListener("mouseup", endDrag);
+
+        document.addEventListener("touchstart", (e) => startDrag(e.touches[0].clientY));
+        document.addEventListener("touchmove", (e) => moveDrag(e.touches[0].clientY));
+        document.addEventListener("touchend", endDrag);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
